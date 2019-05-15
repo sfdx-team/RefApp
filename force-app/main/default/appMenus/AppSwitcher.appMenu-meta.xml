@@ -61,10 +61,6 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>RefApp</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>Ref</name>
         <type>CustomApplication</type>
     </appMenuItems>

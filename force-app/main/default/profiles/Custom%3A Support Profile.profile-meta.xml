@@ -6,6 +6,14 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>AccountGateWay</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AttachmentController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -14,10 +22,27 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ITrigger</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SessionRefereeCreate</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>TriggerException</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TriggerFactory</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Audit__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Referee__c.Bio__c</field>
@@ -69,14 +94,18 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Referee__c-Referee Layout</layout>
+        <layout>Audit__c-Audit Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Session_Referee__c-Session Referee Layout</layout>
+        <layout>Referee__c-Referee Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Session__c-Session Layout</layout>
     </layoutAssignments>
+    <tabVisibilities>
+        <tab>Audit__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Referee__c</tab>
         <visibility>DefaultOn</visibility>

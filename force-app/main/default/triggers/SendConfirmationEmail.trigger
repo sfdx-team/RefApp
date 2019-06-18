@@ -1,4 +1,6 @@
 trigger SendConfirmationEmail on Session_Referee__c (after insert) {
+     
+     
      List<Id> sessionRefereeIds = new List<Id>();
     for(Session_Referee__c newItem : trigger.new) {
         sessionRefereeIds.add(newItem.Id);

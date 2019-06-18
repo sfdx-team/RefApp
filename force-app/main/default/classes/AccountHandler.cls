@@ -11,7 +11,7 @@ public with sharing class AccountHandler
 	private Set<Id> m_inUseIds = new Set<Id>();
 	
 	// Member variable to record Audit records
-	//private List<Audit__c> m_audits = new List<Audit__c>();
+	private List<Audit__c> m_audits = new List<Audit__c>();
 	
 	// Constructor
 	public AccountHandler()
@@ -30,7 +30,8 @@ public with sharing class AccountHandler
 		if (Trigger.isDelete)
 		{
 			// pre load all the in use projects passed to this trigger
-			m_inUseIds = AccountGateway.findAccountIdsInUse(Trigger.oldMap.keySet());
+			//AccountGatWay 'Way' is mistype 
+			m_inUseIds = AccountGateWay.findAccountIdsInUse(Trigger.oldMap.keySet());
 		}
 	}
 	
@@ -61,15 +62,15 @@ public with sharing class AccountHandler
 		if (m_inUseIds.contains(myAccount.Id))
 		{
 			// Add the error to the offending object
-			so.addError('You cannot delete an Account that is in use.');
+			so.addError('You cannot delete an Account that is in use.' + myAccount.Id);
 		}
 		else
 		{
 			// Add an audit record to the list
-			//Audit__c myAudit = new Audit__c();
-			//myAudit.Description__c = 'Account Name: ' + myAccount.Name + ' (Id: ' + myAccount.Id + ') was deleted';
+			Audit__c myAudit = new Audit__c();
+			myAudit.Description__c = 'Account Name: ' + myAccount.Name + ' (Id: ' + myAccount.Id + ') was deleted by ';
 			
-		//	m_audits.add(myAudit);
+			m_audits.add(myAudit);
 		}
 	}
 	
@@ -94,9 +95,9 @@ public with sharing class AccountHandler
 	public void andFinally()
 	{
 		// insert any audit records
-		//if (!m_audits.isEmpty())
-		//{
-		//	insert m_audits;
-	//	}
+		if (!m_audits.isEmpty())
+		{
+			insert m_audits;
+		}
 	}
 }

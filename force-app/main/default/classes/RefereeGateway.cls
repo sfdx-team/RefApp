@@ -17,24 +17,19 @@ public without sharing class RefereeGateway {
        //to add all id being use
        Set<Id> inUseIds = New Set<Id>(); 
        //session Id to be track to check if the Referesee has no session in place
-        Set<Id> seIds = New Set<Id>();
-     
+    
+     for (Session_Referee__c[] refs : [Select p.Id, Session__c From Session_Referee__c p where p.Id in : refIds])
+		{	
+			for (Session_Referee__c ref : refs)
+			{
+				if (ref.Session__c<> null)
+				{
+					inUseIds.add(ref.Id);
+				}
+			}
+		}
 
-    Session_Referee__c[] refses = [SELECT Referee__c, Session__c, Id, Name 
-                               FROM Session_Referee__c];
-   
-   
-
-    for( Session_Referee__c refse : refses)
-    {
-        seIds.add(refse.Session__c);
-        if(seIds.size()> 0 ){
-            inUseIds.add(refse.Id);
-        }
-    }
-
-       
-      
+      return inUseIds;
    }
    
 }

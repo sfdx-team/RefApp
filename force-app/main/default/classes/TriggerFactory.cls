@@ -114,6 +114,11 @@ public with sharing class TriggerFactory
 		{
 			return new AccountHandler();
 		}
+		else if (soType == Session_Referee__c.sObjectType) 
+		{
+			return new refereeHandler();	
+		}
+		
 		
 		return null;
 	}

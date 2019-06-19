@@ -116,7 +116,11 @@ public with sharing class TriggerFactory
 		}
 		else if (soType == Session_Referee__c.sObjectType) 
 		{
-			return new refereeHandler();	
+			return new SessionRefereeHandler();	
+		}
+		else if (soType == Referee__c.sObjectType)
+		{
+			return new refereeHandler();
 		}
 		
 		

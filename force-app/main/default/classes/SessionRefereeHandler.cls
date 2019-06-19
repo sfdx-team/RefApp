@@ -1,18 +1,17 @@
-public with sharing class refereeHandler  implements ITrigger{
-    //member varias(private) to hold the ids of Accounts 'in ued'
+public with sharing class SessionRefereeHandler implements ITrigger {
+    
+      //member varias(private) to hold the ids of Accounts 'in ued'
     
    // Member variable to hold the Id's of Accounts 'in use'
 	private Set<Id> m_inUseIds = new Set<Id>();
 	
 	// Member variable to record Audit records
+
 	private List<Audit__c> m_audits = new List<Audit__c>();
-
-
-    
-    //constructor
-    public refereeHandler() {
+    public SessionRefereeHandler() {
 
     }
+
     /**
 	 * bulkBefore
 	 *
@@ -29,7 +28,7 @@ public with sharing class refereeHandler  implements ITrigger{
 			//m_inUseIds = AccountGateWay.findAccountIdsInUse(Trigger.oldMap.keySet());
 
 			// pre load all id the in use projects passed to this Trigger
-			m_inUseIds = RefereeGateway.findRefereeIdsInUse(Trigger.oldMap.keySet());
+			m_inUseIds = SessionRefereeGateway.findRefereeIdsInUse(Trigger.oldMap.keySet());
 		}
 	}
 	
@@ -50,23 +49,23 @@ public with sharing class refereeHandler  implements ITrigger{
 	 */
 	public void beforeDelete(SObject so)
 	{	
-		// Cast the SObject to an Referee
-		Referee__c myReferee = (Referee__c)so;
+		// Cast the SObject to an Account
+		Session_Referee__c myRefereeSession = (Session_Referee__c)so;
 		
 		// Examine the Set and if the account is in use don't allow it to be deleted.	
-		if (m_inUseIds.contains(myReferee.Id))
+		if (m_inUseIds.contains(myRefereeSession.Id))
 		{
 			//Works only on records of Session_Referee__c, but I want to pop up warming that ref can not be delte because is refere '
 			//I wasnt to implment that '
 			
 			// Add the error to the offending object
-			so.addError('You cannot delete refereee with session version2.' + myReferee.Id);
+			so.addError('You cannot delete refereee with session.' + myRefereeSession.Id);
 		}
 		else
 		{
 			// Add an audit record to the list
 			Audit__c myAudit = new Audit__c();
-			myAudit.Description__c = 'Sessoin Name: ' + myReferee.Name + ' (Id: ' + myReferee.Id + ') was deleted by ';
+			myAudit.Description__c = 'SessReff Name: ' + myRefereeSession.Name + ' (Id: ' + myRefereeSession.Id + ') was deleted by ';
 			
 			m_audits.add(myAudit);
 		}
@@ -100,6 +99,4 @@ public with sharing class refereeHandler  implements ITrigger{
 	}
 
 
-
-    
 }

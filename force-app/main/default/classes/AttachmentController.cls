@@ -4,7 +4,8 @@ public with sharing class AttachmentController {
    @AuraEnabled
     public static void updatePicturePath(String recId){
         //In Lightning Experience, Attachments are stored in ContentDocuments
-        ContentDocumentLink docLink = [ SELECT ContentDocumentId
+        ContentDocumentLink docLink;
+         docLink = [ SELECT ContentDocumentId
                                FROM ContentDocumentLink
                                WHERE LinkedEntityId = :recId order by Id desc Limit 1];
         //ContentVersion Id uniquely identifies the attachment

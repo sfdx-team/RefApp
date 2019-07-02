@@ -11,6 +11,7 @@
     <navType>Standard</navType>
     <tabs>Session__c</tabs>
     <tabs>Referee__c</tabs>
+    <tabs>Audit__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Ref_UtilityBar</utilityBar>
 </CustomApplication>

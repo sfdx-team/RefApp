@@ -5,6 +5,8 @@
 # Notes per project
 *.Notes
 
+scripts/
+
 # Salesforce cache
 .sfdx/
 

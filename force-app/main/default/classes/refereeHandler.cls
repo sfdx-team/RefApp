@@ -60,7 +60,7 @@ public with sharing class refereeHandler  implements ITrigger{
 			//I wasnt to implment that '
 			
 			// Add the error to the offending object
-			so.addError('You cannot delete refereee with session version2.' + myReferee.Id);
+			so.addError('You cannot delete an Referee that is in use.' + myReferee.Id);
 		}
 		else
 		{

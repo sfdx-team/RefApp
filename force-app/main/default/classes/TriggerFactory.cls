@@ -107,16 +107,14 @@ public with sharing class TriggerFactory
 	 * Arguments:	Schema.sObjectType soType - Object type tolocate (SObject.sObjectType)
 	 *
 	 * Returns:		ITrigger - A trigger handler if one exists or null.
+	 * 
+	 * Errors: 		Delete Schema.sObjectType, Handler, Gateway, Trigger
 	 */
 	private static ITrigger getHandler(Schema.sObjectType soType)
 	{
 		if (soType == Account.sObjectType)
 		{
 			return new AccountHandler();
-		}
-		else if (soType == Session_Referee__c.sObjectType) 
-		{
-			return new SessionRefereeHandler();	
 		}
 		else if (soType == Referee__c.sObjectType)
 		{

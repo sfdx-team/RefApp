@@ -25,6 +25,7 @@ public class DataSetup {
         Referee__c ref = refs[j];
        
         for(Integer l = 0; l<numSessions; l++){
+            
            sessionRefs.add(New Session_Referee__c(Referee__c= ref.Id, Session__c =sessions[l].Id )); // must session[l] to track sessions
         }
 	}

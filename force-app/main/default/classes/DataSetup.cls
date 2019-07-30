@@ -1,5 +1,11 @@
+/**
+ * Datasetup Created Referees and Sessions to have records. 
+ * 
+ * Notes
+ * Created a Map to populate it with all the session id, to input to refs
+ * Similar to the Certification with passed/fail method
+ * */
 public class DataSetup {
- 
       public static List<Referee__c> createRefereeWithSessions(Integer numRefs, Integer numSessions){
         List<Referee__c> refs = New List<Referee__c>();
         List<Session__c> sessions = New List<Session__c>();
@@ -18,9 +24,10 @@ public class DataSetup {
             sessions.add(New Session__c(Name = ' Test Session'+ k ));
 
         }
+          
         insert sessions;
   	//session refs
-      //for each ref add this amound of sessions
+      //for each ref add this many sessions
 	    for(Integer j = 0; j< numRefs; j++){
         Referee__c ref = refs[j];
        

@@ -4,6 +4,8 @@
 
 package.xml
 force-app/main/default/layouts/Session_Referee__c-Session Referee Layout.layout-meta.xml
+
+force-app/main/default/profiles/Custom*
 force-app/main/default/profiles/Admin.profile-meta.xml
 # LWC configuration files
 **/jsconfig.json

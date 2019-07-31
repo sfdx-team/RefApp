@@ -63,6 +63,7 @@ public class DataFactory {
       UserRoleId = userRole.Id
     );
     insert u;
+    
     return u;
   }
 

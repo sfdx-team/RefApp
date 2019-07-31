@@ -1,3 +1,23 @@
-<aura:component>
+<aura:component implements ="flexipage:availableForRecordHome,force:appHostable,lightning:actionOverride,force:hasRecordId">
+<aura:attribute name = "Session" type= "Session__c" />
+<aura:attribute name = "recordId" type = "String" />
+
+<div class="slds-p-bottom_large sld-p-left_large" style="width: 600px">
+
+    <lightning:recordEditForm aura:id="recordViewForm"
+    recordId="{!v.recordId}"
+    recordTypeId="{!v.Session__c}"
+    objectApiName="Session__c"
+    onsuccess="{!c.onSuccess}">
+    <lightning:messages />
+    <lightning:inputField fieldName="Name" />
+    <lightning:inputField fieldName="Level__c" />
+    <lightning:inputField fieldName="Notes__c" />
+    <lightning:inputField fieldName="Date__c" />
+    <lightning:button aura:id= "submit"  type="submit" label="Update Session" class="slds-m-top-medium" />
+    </lightning:recordEditForm>
+   
+</div>
+
 
 </aura:component>	

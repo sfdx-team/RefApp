@@ -4,7 +4,7 @@
         var resultToast = $A.get("e.force:showToast");
         resultToast.setParams({
                             "title": "Success!",
-                            "message": "Record Saved Successfully"
+                            "message": "Referee upsert Saved Successfully"
                         });
         resultToast.fire();
         //Navigate to sObject home page
@@ -19,7 +19,7 @@
     var toastEvent = $A.get("e.force:showToast");
     toastEvent.setParams({
         "title": "Success!",
-        "message": "The record has been updated successfully."
+        "message": "The Referee record has been updated successfully."
     });
     toastEvent.fire();
 }

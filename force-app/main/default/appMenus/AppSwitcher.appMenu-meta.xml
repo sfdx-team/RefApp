@@ -64,8 +64,4 @@
         <name>Ref</name>
         <type>CustomApplication</type>
     </appMenuItems>
-    <appMenuItems>
-        <name>MyReferee</name>
-        <type>ConnectedApp</type>
-    </appMenuItems>
 </AppMenu>

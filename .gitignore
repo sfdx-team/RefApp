@@ -5,6 +5,7 @@
 # Notes per project
 *.Notes
 
+server.key
 scripts/
 
 # Salesforce cache

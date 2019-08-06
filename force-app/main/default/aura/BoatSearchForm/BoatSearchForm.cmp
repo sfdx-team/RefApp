@@ -1,0 +1,42 @@
+<aura:component description="BoatSearchForm"  implements="flexipage:availableForAllPageTypes">
+  
+    
+ <!-- Handle component init in a client-side controller -->
+ 
+ <aura:attribute name="selectedType" type="String" default="foo"/>
+ <aura:attribute name="standAlone" type="Boolean" default="true"/>
+  <article class="slds-card slds-m-bottom_medium">
+ <div class="slds-media__body">
+ <div>
+ <lightning:select aura:id="boatTypes" label="" name="selectType"
+ onchange="{!c.handleChange}">
+ <option value="">All Types</option>
+ <aura:iteration items="{!v.BoatTypes}" var="boatType">
+ <option value="{!boatType.Id}">{!boatType.Name}</option>
+ </aura:iteration>
+ </lightning:select>
+ <lightning:layout horizontalAlign="center" verticalAlign="center" >
+
+ <lightning:layoutItem padding="horizontal-medium">
+ <!-- Create a dropdown menu with options -->
+
+ </lightning:layoutItem>
+
+
+ <lightning:layoutItem>
+
+ <div class="slds-button-group" role="group">
+ <lightning:button class="slds-button" variant="brand" label="Search" onclick="{!c.search}"/>
+    <br></br>
+ <aura:if isTrue="{!v.standAlone}">
+ <lightning:button class="slds-button" variant="neutral" label="New" onclick="{!c.newBoat}"/>
+ </aura:if>
+ </div>
+ </lightning:layoutItem>
+
+ </lightning:layout>
+ </div>
+ </div>
+ </article>
+
+ </aura:component>

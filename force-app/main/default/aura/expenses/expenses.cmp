@@ -1,0 +1,47 @@
+<!--Stop before the event Registration from basic components-->
+<aura:component controller="ExpensesController">
+    <aura:attribute name="expenses" type="Expense__c[]" />
+    
+    <aura:handler name="init"  action="{!c.doInit}" value="{!this}" />
+
+    <!-- handles updateExpense event from expensesItem-->
+    <aura:handler name="updateExpense" event="c:expensesItemUpdate" action="{!c.handleUpdateExpense}"/>
+
+
+    <!-- handles the createExpense evemt from expensesForm-->
+    <aura:handler name="createExpense" event="c:expensesItemUpdate"
+    action="{!c.handleCreateExpense}"/>
+
+    <!-- PAGE HEADER -->
+    <lightning:layout class="slds-page-header slds-page-header--object-home">
+        <lightning:layoutItem>
+            <lightning:icon iconName="standard:scan_card" alternativeText="My Expenses"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Expenses</h1>
+                <h2 class="slds-text-heading--medium">My Expenses</h2>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- / PAGE HEADER -->
+   
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="6">
+        <!-- [[ expense form goes here ]] -->
+        <c:expenseForm />
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- / NEW EXPENSE FORM -->
+   <!-- <c:expensesList expenses="{!v.expenses}"/> --> 
+   <lightning:layout>
+    <lightning:layoutItem padding="around-small" size="6">
+        <c:expensesList expenses="{!v.expenses}"/>
+    </lightning:layoutItem>
+    <lightning:layoutItem padding="around-small" size="6">
+        Put something cool here
+    </lightning:layoutItem>
+</lightning:layout>
+
+
+</aura:component>	

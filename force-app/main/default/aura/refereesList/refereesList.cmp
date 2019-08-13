@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:attribute name="referees" type="Referee__c[]"/>
+    <lightning:card title="Referees">
+        <p class="slds-p-horizontal--small">
+            <aura:iteration items="{!v.referees}" var="referee">
+                <c:refereeItem referee="{!referee}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+</aura:component>

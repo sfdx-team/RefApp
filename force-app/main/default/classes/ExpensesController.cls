@@ -9,7 +9,7 @@ public with sharing class ExpensesController {
         // OK, they're cool, let 'em through
         return [SELECT Id, Name, Amount__c, Client__c, Date_Of_Purchase__c, 
                        Reimbursed__c, CreatedDate 
-                FROM Expense__c];
+                FROM Expense__c LIMIT 5];
     }
     @AuraEnabled
     public static Expense__c saveExpense(Expense__c expense) {

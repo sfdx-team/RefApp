@@ -1,78 +1,74 @@
-<aura:component controller="ExpensesController">
-    <!-- ATTRIBUTES THIN LIKE VARIABLES-->
-    <aura:attribute name="expenses" type="Expense__c[]" />
-    <aura:attribute name="newExpense" type="Expense__c"
-    default="{ 'sobjectType': 'Expense__c',
-                   'Name': 'Sal',
-                   'Amount__c': 0,
-                   'Client__c': '',
-                   'Date__c': '',
-                   'Reimbursed__c': true }" />
+<!--Stop before the event Registration from basic components-->
+<aura:component controller="RefereesController">
+        <aura:attribute name="referees" type="Referee__c[]" />
+    <aura:attribute name="newReferee" type="Referee__c"
+    default="{ 'sobjectType': 'Referee__c',
+                   'First_Name__c': 'First Name',
+                   'Last_Name__c': 'LN',
+                   'Email__c': '',
+                   'CreatedDate': '',
+                   'IsDeleted': false }" />
     <aura:handler name="init"  action="{!c.doInit}" value="{!this}" />
 
     <!-- PAGE HEADER -->
     <lightning:layout class="slds-page-header slds-page-header--object-home">
         <lightning:layoutItem>
-            <lightning:icon iconName="standard:scan_card" alternativeText="My Expenses"/>
+            <lightning:icon iconName="standard:scan_card" alternativeText="My Referees"/>
         </lightning:layoutItem>
         <lightning:layoutItem padding="horizontal-small">
             <div class="page-section page-header">
-                <h1 class="slds-text-heading--label">Expenses</h1>
-                <h2 class="slds-text-heading--medium">My Expenses</h2>
+                <h1 class="slds-text-heading--label">Referees</h1>
+                <h2 class="slds-text-heading--medium">My Referees</h2>
             </div>
         </lightning:layoutItem>
     </lightning:layout>
     <!-- / PAGE HEADER -->
-    <!-- NEW EXPENSE FORM -->
-        <!-- CREATE NEW EXPENSE -->
-        <div aria-labelledby="newexpenseform">
+    <!-- NEW Referee FORM -->
+        <!-- CREATE NEW Referee -->
+        <div aria-labelledby="newRefereeform">
                 <!-- BOXED AREA -->
                 <fieldset class="slds-box slds-theme--default slds-container--small">
-                <legend id="newexpenseform" class="slds-text-heading--small 
+                <legend id="newRefereeform" class="slds-text-heading--small 
                   slds-p-vertical--medium">
-                  Add Expense
+                  Add Referee
                 </legend>
           
-                <!-- CREATE NEW EXPENSE FORM -->
+                <!-- CREATE NEW Referee FORM -->
                 <form class="slds-form--stacked">          
-                    <lightning:input aura:id="expenseform" label="Expense Name"
-                                     name="expensename"
-                                     value="{!v.newExpense.Name}"
+                    <lightning:input aura:id="refereeform" label="Referee First Name"
+                                     name="Refereename"
+                                     value="{!v.newReferee.First_Name__c}"
                                      required="true"/> 
-                    <lightning:input type="number" aura:id="expenseform" label="Amount"
-                                     name="expenseamount"
-                                     min="0.1"
-                                     formatter="currency"
-                                     step="0.01"
-                                     value="{!v.newExpense.Amount__c}"
-                                     messageWhenRangeUnderflow="Enter an amount that's at least $0.10."/>
-                    <lightning:input aura:id="expenseform" label="Client"
-                                     name="expenseclient"
-                                     value="{!v.newExpense.Client__c}"
-                                     placeholder="ABC Co."/>
-                    <lightning:input type="date" aura:id="expenseform" label="Expense Date"
-                                     name="expensedate"
-                                     value="{!v.newExpense.Date_Of_Purchase__c}"/>
-                    <lightning:input type="checkbox" aura:id="expenseform" label="Reimbursed?"  
-                                     name="expreimbursed"
-                                     checked="{!v.newExpense.Reimbursed__c}"/>
-                    <lightning:button label="Create Expense" 
+                    <lightning:input aura:id="refereeform" label="Ref Last"
+                                     name="Refereelast"
+                                     value="{!v.newReferee.Last_Name__c}" />
+                    <lightning:input aura:id="refereeform" label="Email "
+                                     name="RefereeEmail"
+                                     value="{!v.newReferee.Email__c}"
+                                     placeholder="@@@@@@@"/>
+                    <lightning:input type="date" aura:id="refereeform" label="Referee Date"
+                                     name="Refereedate"
+                                     value="{!v.newReferee.CreatedDate}"/>
+                    <lightning:input type="checkbox" aura:id="refereeform" label="IsDeleted?"  
+                                     name="IsDeleted"
+                                     checked="{!v.newReferee.IsDeleted}"/>
+                    <lightning:button label="Create Referee" 
                                       class="slds-m-top--medium"
                                       variant="brand"
                                       onclick="{!c.clickCreate}"/>
                 </form>
-                <!-- / CREATE NEW EXPENSE FORM -->
+                <!-- / CREATE NEW Referee FORM -->
           
               </fieldset>
               <!-- / BOXED AREA -->
             </div>
-            <!-- / CREATE NEW EXPENSE -->
+            <!-- / CREATE NEW Referee -->
     <lightning:layout>
         <lightning:layoutItem padding="around-small" size="6">
-        <!-- [[ expense form goes here ]] -->
+        <!-- [[ Referee form goes here ]] -->
         </lightning:layoutItem>
     </lightning:layout>
-    <!-- / NEW EXPENSE FORM -->
-    <c:expensesList expenses="{!v.expenses}"/>
+    <!-- / NEW Referee FORM -->
+    <c:refereesList referees="{!v.referees}"/>
 
-</aura:component>
+</aura:component>	

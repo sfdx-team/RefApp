@@ -4,7 +4,20 @@
         // set callback action with anonymous runction(response)
         //set varialbe to received response state 
         //A.enquestAction 
-        doInit: function(component, event, helper){
+        
+            //move click created to isolate components
+            //hanldeUpdate referee
+            handleUpdateReferee : function(component, event, helper){
+                var updateRef = event.getParam("referee");
+                helper.updateReferee(component, updateRef);
+
+            },
+            handleCreateReferee: function(component, event, helper){
+                var newReferee = event.getParam("referee");
+                helper.createReferee(component, newReferee);
+            },
+            
+            doInit: function(component, event, helper){
                 //create the action
                 var action= component.get("c.getReferees");
                 // Add callback behavior fro when response is reive
@@ -21,32 +34,7 @@
                 $A.enqueueAction(action);
         
             },
-            //Step sfor created controller
-            //set var to get array of reference input the requiered validation
-            //js reduce() fucntion
-            //validSoFar captures from reduce
-            //inputCmp.get('v.validity').valid
-            //inputCmp.showHelpMessageIfInvalid 
-            // which can customized with messageWhenRangeUnderflow
-            clickCreate: function(component, event, helper) {
-                var validReferee = component.find('refereeform').reduce(function (validSoFar, inputCmp) {
-                    // Displays error messages for invalid fields
-                    inputCmp.showHelpMessageIfInvalid();
-                    return validSoFar && inputCmp.get('v.validity').valid;
-                }, true);
-                // If we pass error checking, do some real work
-                if(validReferee){
-                    // Create the new expense
-                    var newReferee = component.get("v.newReferee");
-                    console.log("Create Referee: " + JSON.stringify(newReferee));
-                    helper.createReferee(component, newReferee);
-                }
-            },
             
-            
-
-           
-
 })
 
 

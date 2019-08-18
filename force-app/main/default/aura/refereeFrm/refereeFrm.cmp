@@ -1,0 +1,57 @@
+<!-- form to be integrate with CardReferee-->
+<aura:component>
+<!--attributes for -->
+    <aura:attribute name="newReferee" type="Referee__c"
+    default="{ 'sobjectType': 'Referee__c',
+                   'First_Name__c': 'Juan',
+                   'Last_Name__c': 'LocalLast',
+                   'Email__c': 'panda@gmail.com',
+                   'Date_of_Last_Match_Officiated__c': '',
+                   'Certified_Referee__c': false,
+                   Last_Match_Officiated__c : 'team 1 vs team 2'}" />
+
+<!-- register event to be fire by clickCreate-->
+    <aura:registerEvent name="createReferee" type="c:refereesUpdateItem"/>
+
+    <!-- CREATE NEW Referee -->
+    <div aria-labelledby="newrefereeform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--default slds-container--small">
+        <legend id="newrefereeform" class="slds-text-heading--small 
+          slds-p-vertical--medium">
+          Add Referee
+        </legend>
+  
+        <!-- CREATE NEW Referee FORM -->
+        <form class="slds-form--stacked">          
+            <lightning:input aura:id="refereeform" label="Referee First Name"
+                             name="Refereename"
+                             value="{!v.newReferee.First_Name__c}"
+                             required="true"/> 
+            <lightning:input aura:id="refereeform" label="Ref Last"
+                             name="Refereelast"
+                             value="{!v.newReferee.Last_Name__c}" />
+            <lightning:input aura:id="refereeform" label="Email "
+                             name="RefereeEmail"
+                             value="{!v.newReferee.Email__c}"
+                             placeholder="@@@@@@@"/>
+            <lightning:input type="date" aura:id="refereeform" label="Referee Last Match Date"
+                             name="RefereeLastGameDate"
+                             value="{!v.newReferee.Date_of_Last_Match_Officiated__c}"/>
+            <lightning:input type="checkbox" aura:id="refereeform" label="IsCertified?"  
+                             name="IsCertified"
+                             checked="{!v.newReferee.Certified_Referee__c}"/>
+            <lightning:input aura:id= "refereeform" label="Ref Last Game" name="RefLastGame"
+                             value="{!v.newReferee.Last_Match_Officiated__c}"/>
+            <lightning:button label="Create Referee" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.clickCreate}"/>
+        </form>
+        <!-- / CREATE NEW Referee FORM -->
+  
+      </fieldset>
+      <!-- / BOXED AREA -->
+    </div>
+    <!-- / CREATE NEW Referee -->
+</aura:component>	

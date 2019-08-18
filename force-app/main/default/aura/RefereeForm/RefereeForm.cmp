@@ -1,3 +1,4 @@
+<!-- Actual form from conference. -->
 <aura:component implements="flexipage:availableForRecordHome,force:appHostable,lightning:actionOverride,force:hasRecordId">
     <aura:attribute name="Referee" type="Referee__c" />
     <aura:attribute name="recordId" type="String" />

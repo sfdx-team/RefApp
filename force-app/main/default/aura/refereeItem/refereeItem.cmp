@@ -3,8 +3,12 @@
     <aura:attribute name="formatdate" type="Date"/>
     <aura:attribute name="referee" type="Referee__c"/>
 
+    <!-- Registered event to be fired by clickReturn -->
+    <aura:registerEvent name="updateReferee" type="c:refereesUpdateItem"/>
+
+
     <lightning:card title="{!v.referee.First_Name__c}" iconName="standard:scan_card"
-                    class="{!v.referee.IsDeleted__c ?
+                    class="{!v.referee.Certified_Referee__c ?
                            'slds-theme--success' : ''}">
         <aura:set attribute="footer">
             <p>Date: <lightning:formattedDateTime value="{!v.formatdate}"/></p>
@@ -20,13 +24,13 @@
         
         <p>
             <lightning:input type="toggle" 
-                             label="Reimbursed?"
-                             name="reimbursed"
+                             label="Certified?"
+                             name="certified"
                              class="slds-p-around--small"
-                             checked="{!v.referee.isDeleted}"
+                             checked="{!v.referee.Certified_Referee__c}"
                              messageToggleActive="Yes"
                              messageToggleInactive="No"
-                             onchange="{!c.clickReimbursed}"/>
+                             onchange="{!c.clickCertified}"/>
         </p>
     </lightning:card>
 </aura:component>

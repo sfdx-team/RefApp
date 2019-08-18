@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT">
+<aura:attribute  name= "referee" type="Referee__c" />
+</aura:event>

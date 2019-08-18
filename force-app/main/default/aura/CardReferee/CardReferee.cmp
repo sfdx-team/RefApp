@@ -1,14 +1,14 @@
 <!--Stop before the event Registration from basic components-->
 <aura:component controller="RefereesController">
         <aura:attribute name="referees" type="Referee__c[]" />
-    <aura:attribute name="newReferee" type="Referee__c"
-    default="{ 'sobjectType': 'Referee__c',
-                   'First_Name__c': 'First Name',
-                   'Last_Name__c': 'LN',
-                   'Email__c': '',
-                   'CreatedDate': '',
-                   'IsDeleted': false }" />
+    
+        
     <aura:handler name="init"  action="{!c.doInit}" value="{!this}" />
+    <!--hnaldes the created updateExpense Event from refereeFrm-->
+    <aura:handler name="createReferee"  event= "c:refereesUpdateItem" action="{!c.handleCreateReferee}" />
+    <!--crated update event from refereeitem -->
+    <aura:handler name="updateReferee"  event= "c:refereesUpdateItem" action="{!c.handleUpdateReferee}" />
+
 
     <!-- PAGE HEADER -->
     <lightning:layout class="slds-page-header slds-page-header--object-home">
@@ -24,51 +24,21 @@
     </lightning:layout>
     <!-- / PAGE HEADER -->
     <!-- NEW Referee FORM -->
-        <!-- CREATE NEW Referee -->
-        <div aria-labelledby="newRefereeform">
-                <!-- BOXED AREA -->
-                <fieldset class="slds-box slds-theme--default slds-container--small">
-                <legend id="newRefereeform" class="slds-text-heading--small 
-                  slds-p-vertical--medium">
-                  Add Referee
-                </legend>
-          
-                <!-- CREATE NEW Referee FORM -->
-                <form class="slds-form--stacked">          
-                    <lightning:input aura:id="refereeform" label="Referee First Name"
-                                     name="Refereename"
-                                     value="{!v.newReferee.First_Name__c}"
-                                     required="true"/> 
-                    <lightning:input aura:id="refereeform" label="Ref Last"
-                                     name="Refereelast"
-                                     value="{!v.newReferee.Last_Name__c}" />
-                    <lightning:input aura:id="refereeform" label="Email "
-                                     name="RefereeEmail"
-                                     value="{!v.newReferee.Email__c}"
-                                     placeholder="@@@@@@@"/>
-                    <lightning:input type="date" aura:id="refereeform" label="Referee Date"
-                                     name="Refereedate"
-                                     value="{!v.newReferee.CreatedDate}"/>
-                    <lightning:input type="checkbox" aura:id="refereeform" label="IsDeleted?"  
-                                     name="IsDeleted"
-                                     checked="{!v.newReferee.IsDeleted}"/>
-                    <lightning:button label="Create Referee" 
-                                      class="slds-m-top--medium"
-                                      variant="brand"
-                                      onclick="{!c.clickCreate}"/>
-                </form>
-                <!-- / CREATE NEW Referee FORM -->
-          
-              </fieldset>
-              <!-- / BOXED AREA -->
-            </div>
-            <!-- / CREATE NEW Referee -->
+    
     <lightning:layout>
         <lightning:layoutItem padding="around-small" size="6">
         <!-- [[ Referee form goes here ]] -->
+        <c:refereeFrm />
         </lightning:layoutItem>
     </lightning:layout>
     <!-- / NEW Referee FORM -->
-    <c:refereesList referees="{!v.referees}"/>
+    <lightning:layout>
+            <lightning:layoutItem padding="around-small" size="6">
+                <c:refereesList referees="{!v.referees}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" size="6">
+                Put something cool here
+            </lightning:layoutItem>
+        </lightning:layout>
 
 </aura:component>	

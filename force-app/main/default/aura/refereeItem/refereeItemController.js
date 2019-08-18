@@ -11,4 +11,12 @@
 
 
     },
+    clickCertified: function(component, event, helper){
+        var referee = component.get("v.referee");
+        var updateEvent = component.getEvent("updateReferee");
+        updateEvent.setParams({
+            "referee" : referee
+        });
+        updateEvent.fire();
+    },
 })

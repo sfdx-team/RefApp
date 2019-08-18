@@ -7,7 +7,7 @@
     <aura:registerEvent name="updateReferee" type="c:refereesUpdateItem"/>
 
 
-    <lightning:card title="{!v.referee.First_Name__c}" iconName="standard:scan_card"
+    <lightning:card  title="{!v.referee.First_Name__c}" iconName="standard:scan_card"
                     class="{!v.referee.Certified_Referee__c ?
                            'slds-theme--success' : ''}">
         <aura:set attribute="footer">

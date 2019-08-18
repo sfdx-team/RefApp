@@ -1,6 +1,18 @@
 .THIS.slds-theme--success .slds-form-element__label {
-    color: #ffffff;
+    color: #f1c86f;
 }
 .THIS.slds-theme--success .slds-text-title {
-    color: #ffffff;
+    color: #db1198;
+}
+
+.THIS.slds-p-around--small{ 
+    color:red;
+}
+
+.THIS.slds-theme--success  {
+    color: #26ad1a;
+   
+}
+.THIS {
+    color: #0c20ce;
 }

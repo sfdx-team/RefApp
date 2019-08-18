@@ -4,7 +4,7 @@
     //do Set.component bye component.set("v") by findinf where to set
     //do init to format the 
     doInit : function(component, event, helper) {
-        var mydate = component.get("v.referee.CreatedDate");
+        var mydate = component.get("v.referee.Date_of_Last_Match_Officiated__c");
         if(mydate){
             component.set("v.formatdate", new Date(mydate));
         }

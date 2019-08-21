@@ -1,0 +1,10 @@
+<!-- add this cpm to an account record lighnting page-->
+<!-- Add this component to an account record Lightning page -->
+<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
+    <aura:attribute name="recordId" type="String" />
+    <lightning:card title="Display, Create, or Edit Records">
+        <lightning:recordForm recordId="{!v.recordId}" 
+                              objectApiName="Referee__c"
+                              fields="Name" />
+    </lightning:card>
+</aura:component>

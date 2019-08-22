@@ -1,0 +1,18 @@
+<!-- Add this component to an account record Lightning page -->
+<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
+    <lightning:card title="Display, Create, or Edit Records">
+    <!--Editform-->    
+    <lightning:recordEditForm recordId="{!v.recordId}"
+                                  objectApiName="Referee__c">
+            <lightning:messages />
+            <lightning:inputField fieldName="Name" />
+            <lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+        </lightning:recordEditForm>
+
+        <!--viewform-->
+        <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Referee">
+            <lightning:messages />
+            <lightning:outputField fieldName="Name" />
+        </lightning:recordViewForm>
+    </lightning:card>
+</aura:component>

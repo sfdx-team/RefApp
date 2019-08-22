@@ -39,10 +39,6 @@
                 <behavior>Edit</behavior>
                 <field>Date_of_Last_Match_Officiated__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Last_Match_Officiated__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

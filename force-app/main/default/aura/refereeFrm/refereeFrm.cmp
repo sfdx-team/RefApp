@@ -9,7 +9,7 @@
                    'Date_of_Last_Match_Officiated__c': '',
                    'Certified_Referee__c': false,
                    Last_Match_Officiated__c : 'team 1 vs team 2'}" />
-
+<!-- Last_Match_Officiated field can be a formula where the will pull team 1 and team 2 based on the last match.-->
 <!-- register event to be fire by clickCreate-->
     <aura:registerEvent name="createReferee" type="c:refereesUpdateItem"/>
 

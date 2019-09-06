@@ -15,3 +15,5 @@ Push the app to your scratch org:
 Load sample data:
 4) sfdx force:data:tree:import --plan ./data/data-plan.json
 
+5)sfdx force:permset:assign -n referee
+

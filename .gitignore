@@ -4,6 +4,7 @@
 # Elese errors on branches
 # Notes per project
 *.Notes
+JWT/
 
 server.key
 scripts/

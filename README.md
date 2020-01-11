@@ -12,8 +12,10 @@ Push the app to your scratch org:
 ##Assign the referee permission set to the default user:
 3) sfdx force:user:permset:assign -n referee
 
-Load sample data:
+Load sample data: this needs work
 4) sfdx force:data:tree:import --plan ./data/data-plan.json
 
 5)sfdx force:permset:assign -n referee
+
+
 

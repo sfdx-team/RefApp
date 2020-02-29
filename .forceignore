@@ -2,15 +2,56 @@
 # More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
 #
 
+# Ignore package.xml
 package.xml
-force-app/main/default/layouts/Session_Referee__c-Session Referee Layout.layout-meta.xml
 
-force-app/main/default/profiles/Custom*
-force-app/main/default/profiles/Admin.profile-meta.xml
-force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml
-# LWC configuration files
+# Ignoring Profiles that are in the scratch Org but not in Prod
+Authenticated Website.profile-meta.xml
+Chatter External User.profile-meta.xml
+Chatter Free User.profile-meta.xml
+Chatter Moderator User.profile-meta.xml
+Company Communities User.profile-meta.xml
+Contract Manager.profile-meta.xml
+Cross Org Data Proxy User.profile-meta.xml
+Custom: Marketing Profile.profile-meta.xml
+Custom: Sales Profile.profile-meta.xml
+Custom: Support Profile.profile-meta.xml
+Custom%3A Marketing Profile.profile-meta.xml
+Custom%3A Sales Profile.profile-meta.xml
+Custom%3A Support Profile.profile-meta.xml
+Customer Community Login User.profile-meta.xml
+Customer Community Plus Login User.profile-meta.xml
+Customer Community Plus User.profile-meta.xml
+Customer Community User.profile-meta.xml
+Customer Portal Manager Custom.profile-meta.xml
+Customer Portal Manager Standard.profile-meta.xml
+External Identity User.profile-meta.xml
+Force.com - App Subscription User.profile-meta.xml
+Force.com - Free User.profile-meta.xml
+Gold Partner User.profile-meta.xml
+High Volume Customer Portal.profile-meta.xml
+High Volume Customer Portal User.profile-meta.xml
+Identity User.profile-meta.xml
+Marketing User.profile-meta.xml
+Partner App Subscription User.profile-meta.xml
+Partner Community Login User.profile-meta.xml
+Partner Community User.profile-meta.xml
+Read Only.profile-meta.xml
+Silver Partner User.profile-meta.xml
+Solution Manager.profile-meta.xml
+Standard Platform User.profile-meta.xml
+Work.com Only User.profile-meta.xml
+Standard User.profile-meta.xml
+Trail Custom Porter User.profile-meta.xml
+
+
+# Ignore src folder
+src
+
+# Markdown files are used for empty directories
+force-app/not_manage/README.md
+
+
 **/jsconfig.json
-**/.eslintrc.json
 
-# LWC Jest
-**/__tests__/**
+**/.eslintrc.json

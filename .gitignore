@@ -3,6 +3,9 @@
 # For useful gitignore templates see: https://github.com/github/gitignore
 # Elese errors on branches
 # Notes per project
+
+force-app/not_manage/*
+!force-app/not_manage/README.md
 *.Notes
 JWT/
 

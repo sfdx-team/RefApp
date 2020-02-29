@@ -17,5 +17,8 @@ Load sample data: this needs work
 
 5)sfdx force:permset:assign -n referee
 
+#Used not_manage for files not ready to be commit. 
+
+
 
 

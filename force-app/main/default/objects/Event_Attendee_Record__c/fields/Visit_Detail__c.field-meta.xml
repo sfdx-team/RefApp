@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visit_Detail__c</fullName>
+    <description>Relate Visit Detail to transverse all Visit details on EAR for Reporting</description>
+    <externalId>false</externalId>
+    <label>Visit Detail</label>
+    <referenceTo>Visit_Detail__c</referenceTo>
+    <relationshipLabel>Event Attendee Records</relationshipLabel>
+    <relationshipName>Event_Attendee_Records</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

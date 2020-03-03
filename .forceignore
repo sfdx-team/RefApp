@@ -43,7 +43,12 @@ Standard Platform User.profile-meta.xml
 Work.com Only User.profile-meta.xml
 Standard User.profile-meta.xml
 Trail Custom Porter User.profile-meta.xml
-
+force-app/main/default/layouts/Session_Referee__c-Session Referee Layout.layout-meta.xml
+force-app/main/default/profiles/Admin.profile-meta.xml
+force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml  
+force-app/main/default/profiles/Custom%3A Marketing Profile.profile-meta.xml
+force-app/main/default/profiles/Custom%3A Sales Profile.profile-meta.xml 
+force-app/main/default/profiles/Custom%3A Support Profile.profile-meta.xml
 
 # Ignore src folder
 src
